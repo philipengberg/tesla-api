@@ -98,3 +98,52 @@ Sets the charge limit to a custom value.
   "result": true
 }
 ```
+
+## POST `/api/1/vehicles/{id}/command/set_scheduled_departure`
+
+Controls all settings for Scheduled departure.
+
+### Parameters
+
+| Parameter                       | Example | Description                                                       |
+| :------------------------------ | :------ | :---------------------------------------------------------------- |
+| enable                          | true    | Whether to enable Scheduled departure as a whole or not           |
+| departure_time                  | 510     | Minutes past midnight in multiples of 15, i.e. `510 = 08:30`      |
+| preconditioning_enabled         | true    | Whether to enable climate preconditioning or not                  |
+| preconditioning_weekdays_only   | false   | Whether to enable preconditioning for weekdays only or all days   |
+| off_peak_charging_enabled       | true    | Whether to enable off-peak charging or not                        |
+| end_off_peak_time               | 360     | Minutes past midnight in multiples of 15, i.e. `360 = 06:00`      |
+| off_peak_charging_weekdays_only | false   | Whether to enable off-peak charging for weekdays only or all days |
+
+
+
+### Response
+
+```json
+{
+  "reason": "",
+  "result": true
+}
+```
+
+## POST `/api/1/vehicles/{id}/command/set_scheduled_charging`
+
+Controls all settings for Scheduled departure.
+
+### Parameters
+
+| Parameter | Example | Description                                                   |
+| :-------- | :------ | :------------------------------------------------------------ |
+| enable    | true    | Whether to enable Scheduled charging as a whole or not        |
+| time      | 1380    | Minutes past midnight in multiples of 15, i.e. `1380 = 23:00` |
+
+
+
+### Response
+
+```json
+{
+  "reason": "",
+  "result": true
+}
+```
